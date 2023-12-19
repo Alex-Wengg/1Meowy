@@ -1,9 +1,10 @@
-FROM pytorch/pytorch:1.12.1-cuda11.3-cudnn8-runtime
+FROM python:3.9
 
 COPY . .
 
 RUN pip install flask
 RUN pip install flask-cors
+RUN pip install torch torchvision torchaudio
 
 EXPOSE 5000
 

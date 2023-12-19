@@ -19,4 +19,4 @@ COPY . .
 # Exports
 EXPOSE 8080
 
-CMD ["npm","start"]
+CMD ["npm","start"] 

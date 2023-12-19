@@ -4,7 +4,7 @@ COPY . .
 
 RUN pip install flask
 RUN pip install flask-cors
-RUN pip install torch torchvision torchaudio
+RUN pip install torch==2.0.0 --index-url https://download.pytorch.org/whl/cpu
 
 EXPOSE 5000
 

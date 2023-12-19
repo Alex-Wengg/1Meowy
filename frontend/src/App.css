@@ -1,40 +1,13 @@
 main {
 }
 
-.chat-container {
-  height: 300px;
-  overflow-y: auto;
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin-bottom: 10px;
+h1 {
+  margin-left: 20px;
 }
 
-.message {
-  margin: 5px 0;
-  padding: 5px;
-  border-radius: 5px;
-}
+p { 
+  margin-top: -20px;
 
-.message.user {
-  background-color: #d1e7dd;
-  text-align: left;
-}
+  margin-left: 20px;
 
-.message.ai {
-  background-color: #f8d7da;
-  text-align: right;
-}
-
-form {
-  display: flex;
-}
-
-input {
-  flex: 1;
-  padding: 10px;
-  margin-right: 5px;
-}
-
-button {
-  padding: 10px;
 }

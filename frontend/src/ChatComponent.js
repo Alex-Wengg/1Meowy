@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./ChatComponent.css"; // Assuming you have separate CSS for the chat component
+import 'bootstrap';
+import RandomCatImage from './RandomCatImage'; 
 
 const ChatComponent = ({ aiEndpoint }) => {
   const [messages, setMessages] = useState([]);
@@ -21,8 +23,9 @@ const ChatComponent = ({ aiEndpoint }) => {
         setUserInput(""); // Clear user input after receiving the response
       })
       .catch(error => {
+        const s = " Ugh oh! Meowy is currently unavailable rn, pls contact his owner for more info ";
         console.error('Error: ', error);
-        setMessages(prevMessages => [...prevMessages, { sender: "ai", text: "Error in response." }]);
+        setMessages(prevMessages => [...prevMessages, { sender: "ai", text: s }]);
       })
       .finally(() => {
         setIsLoading(false); // Reset loading state
@@ -31,15 +34,21 @@ const ChatComponent = ({ aiEndpoint }) => {
 
   return (
     <div className="chat-container">
+          <div className="messages">
+
+       <RandomCatImage />
       {messages.map((msg, index) => (
         <div key={index} className={`message ${msg.sender}`}>
           {msg.text}
         </div>
       ))}
-      <form onSubmit={sendMessage}>
+          </div>
+
+      <form onSubmit={sendMessage} className="mt-auto">
         <input
           type="text"
           value={userInput}
+          className="form-control"
           onChange={(e) => setUserInput(e.target.value)}
           placeholder="Type a message..."
           disabled={isLoading} // Disable input during loading

@@ -1,32 +1,41 @@
-main {
+.chat-container {
+  padding: 20px;
+  height: auto; /* Adjust as needed */
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto; /* For scrolling */
 }
 
-.chat-container {
-  height: 300px;
-  overflow-y: auto;
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin-bottom: 10px;
+.chat-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: -1; /* Put the image behind the content */
 }
 
 .message {
-  margin: 5px 0;
-  padding: 5px;
-  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 15px;
+  word-break: break-word; /* To handle long texts */
 }
 
 .message.user {
   background-color: #d1e7dd;
-  text-align: left;
+  text-align: center;
+
 }
 
 .message.ai {
   background-color: #f8d7da;
-  text-align: right;
+  text-align: center;
 }
 
 form {
   display: flex;
+  margin-bottom: auto; /* Pushes the form to the bottom */
 }
 
 input {

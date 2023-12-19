@@ -6,3 +6,7 @@ Talking Cat:
 Cowboy Cat:
 Boba Shop Owner: 
 Oliver:
+Luna:
+[Music]
+Meowy:
+Meowy the LLM AI Cat: 

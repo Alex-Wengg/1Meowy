@@ -18,7 +18,7 @@ encode = lambda s: [stoi.get(c, '') for c in s
                     ]  # encoder: take a string, output a list of integers
 decode = lambda l: ''.join([itos.get(i, '') for i in l])
 
-vocab_size = 93
+vocab_size = 96
 n_embd = 384
 block_size = 256
 n_head = 6
@@ -31,8 +31,8 @@ def load_checkpoint(filename):
   checkpoint = torch.load(filename, map_location=device)
   model = GPTLanguageModel(vocab_size, n_embd, block_size, n_layer, n_head, dropout)
   model.to(device)
+  model.load_state_dict(checkpoint, strict=False)
 
-  model.load_state_dict(checkpoint['model_state_dict'])
   model.eval()
 
   context = torch.zeros((1, 1), dtype=torch.long, device=device)
@@ -40,10 +40,11 @@ def load_checkpoint(filename):
   generated = model.generate(context, max_new_tokens=100) 
   generated_text = decode(generated[0].tolist())
   print("Generated Sample:", generated_text)
+  checkpoint = torch.load(checkpoint_path, map_location='cpu')
 
   return model
 
-checkpoint_path = './finished.pth'
+checkpoint_path = './gptBuilder/finished.pth'
 model = load_checkpoint(checkpoint_path)
 
 @app.route('/generate', methods=['POST'])

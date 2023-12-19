@@ -37,7 +37,7 @@ def load_checkpoint(filename):
 
   context = torch.zeros((1, 1), dtype=torch.long, device=device)
 
-  generated = model.generate(context, max_new_tokens=100) 
+  generated = model.generate(context, max_new_tokens=500) 
   generated_text = decode(generated[0].tolist())
   print("Generated Sample:", generated_text)
   checkpoint = torch.load(checkpoint_path, map_location='cpu')
@@ -60,12 +60,12 @@ def generate_text():
 
     # Generate text
     with torch.no_grad():
-      generated = model.generate(input_data, max_new_tokens=100)
+      generated = model.generate(input_data, max_new_tokens=500)
       generated_text = decode(generated[0].tolist())
 
     return jsonify({"generated_text": generated_text})
   except Exception as e:
-    return jsonify({"error": str(e)}), 500
+    return jsonify({"error": str(e)}), 200
 
 
 if __name__ == '__main__':

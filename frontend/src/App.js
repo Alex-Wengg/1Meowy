@@ -12,7 +12,7 @@ export default function App() {
       A Generatively Pretrained Transformer trained by <a href="https://github.com/Alex-Wengg" target="_blank" rel="noopener noreferrer">Alex Weng</a>
       </p>
       <p>Refresh Background Image For Another Pregenerated Image</p>
-      <ChatComponent aiEndpoint="https://d33759988f8994cddaf27792c3ceb4952.clg07azjl.paperspacegradient.com/generate" />
+      <ChatComponent aiEndpoint="https://meowybackend2-ohjzsdclpa-uc.a.run.app/generate" />
     </div>
   );
 }

@@ -60,7 +60,7 @@ def generate_text():
 
     # Generate text
     with torch.no_grad():
-      generated = model.generate(input_data, max_new_tokens=500)
+      generated = model.generate(input_data, max_new_tokens=100)
       generated_text = decode(generated[0].tolist())
 
     return jsonify({"generated_text": generated_text})
@@ -69,4 +69,4 @@ def generate_text():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False, host='0.0.0.0', port=8080)

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./ChatComponent.css"; // Assuming you have separate CSS for the chat component
-import 'bootstrap';
 import RandomCatImage from './RandomCatImage'; 
 
 const ChatComponent = ({ aiEndpoint }) => {

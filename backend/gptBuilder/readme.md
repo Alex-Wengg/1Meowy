@@ -1,1 +1,0 @@
-Cloud Service training or local GPU training

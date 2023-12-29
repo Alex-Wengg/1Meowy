@@ -45,7 +45,7 @@ def load_checkpoint(filename):
 
   return model
 
-checkpoint_path = './gptBuilder/finished.pth'
+checkpoint_path = './finished.pth'
 model = load_checkpoint(checkpoint_path)
 
 @app.route('/generate', methods=['POST'])

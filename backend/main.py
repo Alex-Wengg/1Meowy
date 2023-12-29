@@ -9,7 +9,7 @@ cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 # cors = CORS(app, resources={"/": {"origins": ["https://meowy-ohjzsdclpa-uc.a.run.app"]}})
 
-with open('./gptBuilder/CleanData/refined/input.txt', 'r', encoding='utf-8') as f:
+with open('./input.txt', 'r', encoding='utf-8') as f:
   text = f.read()
 
 chars = sorted(list(set(text)))

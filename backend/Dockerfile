@@ -1,10 +1,8 @@
-FROM python:3.9
+FROM python:3.9-slim 
 
 COPY . .
 
-RUN pip install flask
-RUN pip install flask-cors
-RUN pip install torch==2.0.0 --index-url https://download.pytorch.org/whl/cpu
+RUN pip install --no-cache-dir flask flask-cors && pip install torch==2.0.0 --no-cache-dir --index-url https://download.pytorch.org/whl/cpu && rm -rf /var/lib/apt/lists/*
 ENV HOST 0.0.0.0
 ENV PORT 8080
 EXPOSE 8080

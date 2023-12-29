@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 import torch
 from flask_cors import CORS, cross_origin
 
-from gptBuilder.TransformerSetups import GPTLanguageModel
+from TransformerSetups import GPTLanguageModel
 
 app = Flask(__name__)
 cors = CORS(app)

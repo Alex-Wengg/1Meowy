@@ -67,6 +67,11 @@ def generate_text():
   except Exception as e:
     return jsonify({"error": str(e)}), 200
 
+@app.route('/hello', methods=['GET'])
+@cross_origin()
+def hello():
+    return jsonify({"message": "Hello there!"})
+
 
 if __name__ == '__main__':
     app.run(debug=False, host='0.0.0.0', port=8080)

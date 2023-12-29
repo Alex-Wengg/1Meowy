@@ -6,7 +6,8 @@ from gptBuilder.TransformerSetups import GPTLanguageModel
 
 app = Flask(__name__)
 cors = CORS(app)
-app.config['CORS_HEADERS'] = 'Content-Type'
+# app.config['CORS_HEADERS'] = 'Content-Type'
+cors = CORS(app, resources={r"/generate": {"origins": "https://meowy-ohjzsdclpa-uc.a.run.app"}})
 
 with open('./gptBuilder/CleanData/refined/input.txt', 'r', encoding='utf-8') as f:
   text = f.read()
